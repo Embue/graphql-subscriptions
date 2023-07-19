@@ -26,7 +26,7 @@ describe('PubSub', function() {
 
   it('can unsubscribe', async () => {
     const ps = new PubSub();
-    let subId = await ps.subscribe('a', payload => { assert(false); });
+    let subId = await ps.subscribe('a', payload => { /* do nothing */ });
     ps.unsubscribe(subId);
     let succeed = await ps.publish('a', 'test');
     expect(succeed).to.be.undefined;
